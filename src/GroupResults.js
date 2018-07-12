@@ -8,6 +8,12 @@ import React, { Component } from "react";
 */
 class GroupResults extends Component {
     render() {
+
+      if (this.props.status.length > 0) {
+        return (
+          <h1>{this.props.status}</h1>
+        )
+      }
       return <div>
         
         {this.props.group_results.filter(f => {

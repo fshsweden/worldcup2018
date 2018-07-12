@@ -1,0 +1,56 @@
+.game_detail {
+    text-align: center;
+    background-color: pink;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: " datetime datetime datetime "
+                         " home_flag . away_flag "
+                         " home_goals . away_goals "
+                         " home_team time away_team "
+                         " home_events home_events away_events ";
+}
+
+.x {
+    grid-area: x;
+}
+
+.datetime {
+    grid-area: datetime;
+    text-align: center;
+}
+
+.home_flag {
+    grid-area: home_flag;
+}
+
+.away_flag {
+    grid-area: away_flag;
+}
+
+.home_goals {
+    grid-area: home_goals;
+}
+
+.away_goals {
+    grid-area: away_goals;
+}
+
+.home_team {
+    grid-area: home_team;
+}
+
+.away_team {
+    grid-area: away_team;
+}
+
+.time {
+    grid-area: time;
+}
+
+.home_events {
+    grid-area: home_events;
+}
+
+.away_events {
+    grid-area: away_events;
+}

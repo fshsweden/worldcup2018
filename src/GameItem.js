@@ -1,4 +1,4 @@
-import React, { Link, Component } from "react";
+import React, { Component } from "react";
 
 /*
   --------------------------------------------------------------
@@ -28,7 +28,9 @@ class GameItem extends Component {
                         {m.away_team_country}
                     </div>
                     <div className="col-3">
-                        <a href={"/matches"} className="active">{m.home_team.goals}-{m.away_team.goals}</a>
+                        <a href={"/game/" + m.fifa_id} 
+                        className="active">{m.home_team.goals}-{m.away_team.goals}</a>
+                        
                     </div>
                 </div>
             </div>

@@ -1,35 +1,20 @@
 import React, { Component } from 'react';
-import Game from './Game';
-import TeamEvents from './TeamEvents';
+//import Game from './Game';
+//import TeamEvents from './TeamEvents';
 import Navigation from './Navigation';
 import Home from './Home';
 import Today from './Today';
 import GroupResults from './GroupResults';
 import All from './All';
-import Main from './Main';
+//import Main from './Main';
 import './App.css';
 import './css/flag-icon.css';
-// import './country_icon_list';
-import {
-  Collapse,
-  UncontrolledDropdown,
-  DropdownMenu,
-  DropdownItem,
-  DropdownToggle,
-  NavDropdown,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  Container,
-  Row,
-  Col,
-  Jumbotron,
-  Button
-} from 'reactstrap';
-import { HashRouter, BrowserRouter, Link, Switch, Route } from 'react-router-dom';
+import { 
+  // HashRouter, 
+  BrowserRouter, 
+  // Link, 
+  Switch,
+  Route } from 'react-router-dom';
 
 
 function handleErrors(response) {
@@ -56,19 +41,7 @@ const PropsRoute = ({ component, ...rest }) => {
 
 /*
   --------------------------------------------------------------
-  
-
-  --------------------------------------------------------------
-*/
-class GroupResult extends Component {
-
-}
-
-
-
-/*
-  --------------------------------------------------------------
-  A P P 
+  A P P    NOTE APP IS NOT USED!!! LOOK IN MAIN.JS INSTEAD!!!
 
   --------------------------------------------------------------
 */
@@ -105,32 +78,6 @@ class App extends Component {
     );
   }
 
-  tick() {
-    console.log("tick()...");
-    this.setState({ time_of_last_tick: new Date().getTime() });
-
-    // fetch("http://worldcup.sfg.io/matches?jsoncallback=?")
-    // .then(handleErrors)  
-    // .then(results => {
-    //   return results.json();
-    // }).then(data => {
-    //   this.setState({ matches: data });
-    // }).catch(error => {
-    //   console.log(error);
-    // })
-
-    // fetch("http://worldcup.sfg.io/teams?jsoncalback=?")
-    // .then(handleErrors)
-
-    // .then(results => {
-    //   return results.json();
-    // }).then(data => {
-    //   this.setState({ teams: data });
-    // }).catch(error => {
-    //   console.log(error);
-    // })
-  }
-
   reload_todays_matches() {
     fetch("https://worldcup.sfg.io/matches/today?jsoncalback=?").then(results => {
       return results.json();
@@ -148,14 +95,16 @@ class App extends Component {
   }
 
   reload_group_results() {
-    console.log("GroupResults tick()...");
-    this.setState({ time_of_last_tick: new Date().getTime() });
+    console.log("fetching GroupResults tick()...");
+    // this.setState({ time_of_last_tick: new Date().getTime() });
     fetch("https://worldcup.sfg.io/teams/group_results?jsoncalback=?")
       .then(handleErrors)
       .then(results => {
         return results.json()
       }).then(data => {
         this.setState({ group_results: data });
+      }).then(x => {
+        console.log("Got GroupResults data!");
       })
   }
 

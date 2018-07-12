@@ -5,19 +5,19 @@ import {
   DropdownMenu,
   DropdownItem,
   DropdownToggle,
-  NavDropdown,
   Navbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  Container,
-  Row,
-  Col,
-  Jumbotron,
-  Button
+  NavLink
 } from 'reactstrap';
+
+import { NavLink as RRNavLink } from 'react-router-dom';
+
+// import { LinkContainer } from 'react-router-bootstrap';
+import {Link} from 'react-router-dom';
+
 
 /*
   --------------------------------------------------------------
@@ -50,32 +50,84 @@ class Navigation extends Component {
         <NavbarBrand href="/">World Cup 2018</NavbarBrand>
         <NavbarToggler onClick={this.toggleNavbar} />
         <Collapse isOpen={!this.state.collapsed} navbar>
+          
           <Nav className="ml-auto" navbar>
+
+{/*
+            <Link to="/">Link-Home</Link>
+            <Link to="/today">Link-Today</Link>
+            <Link to="/games">Link-Games</Link>
+*/}
             <NavItem>
-              <NavLink href="/">Home</NavLink>
+              <NavLink to="/" activeClassName="active" tag={RRNavLink}>Home</NavLink>
             </NavItem>
+
             <NavItem>
-              <NavLink href="/today/">Today</NavLink>
+              <NavLink to="/today/" activeClassName="active" tag={RRNavLink}>Today</NavLink>
             </NavItem>
+
             <NavItem>
-              <NavLink href="/groups/">Groups</NavLink>
+              <NavLink to="/games/" activeClassName="active" tag={RRNavLink}>Games</NavLink>
             </NavItem>
+
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
-                Options
-                </DropdownToggle>
+                Groups
+              </DropdownToggle>
+
               <DropdownMenu right>
-                <DropdownItem>
-                  Option 1
+
+                <NavLink to="/group_a/" activeClassName="active" tag={RRNavLink}>
+                  <DropdownItem>
+                    Group A<i className='fas fa-power-off float-right'></i>
                   </DropdownItem>
-                <DropdownItem>
-                  Option 2
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>
-                  Reset
-                </DropdownItem>
+                </NavLink>
+
+                <NavLink to="/group_b/" activeClassName="active" tag={RRNavLink}>
+                  <DropdownItem>
+                    Group B
+                  </DropdownItem>
+                </NavLink>
+
+                <NavLink to="/group_c/" activeClassName="active" tag={RRNavLink}>
+                  <DropdownItem>
+                    Group C
+                  </DropdownItem>
+                </NavLink>
+
+                <NavLink to="/group_d/" activeClassName="active" tag={RRNavLink}>
+                  <DropdownItem>
+                    Group D
+                  </DropdownItem>
+                </NavLink>
+
+                <NavLink to="/group_e/" activeClassName="active" tag={RRNavLink}>
+                  <DropdownItem>
+                    Group E
+                  </DropdownItem>
+                </NavLink>
+
+                <NavLink to="/group_f/" activeClassName="active" tag={RRNavLink}>
+                  <DropdownItem>
+                    Group F
+                  </DropdownItem>
+                </NavLink>
+
+                <NavLink to="/group_g/" activeClassName="active" tag={RRNavLink}>
+                  <DropdownItem>
+                    Group G
+                  </DropdownItem>
+                </NavLink>
+
+                <NavLink to="/group_h/" activeClassName="active" tag={RRNavLink}>
+                  <DropdownItem>
+                    Group H
+                  </DropdownItem>
+                </NavLink>
+
+
               </DropdownMenu>
+
             </UncontrolledDropdown>
           </Nav>
 
